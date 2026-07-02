@@ -59,6 +59,25 @@ body h3{
     padding-bottom:40px;
 }
 
+.hero{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin:15px 0 35px;
+}
+
+.hero img{
+    width:360px;
+    height:auto;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.15);
+
+    display:block;
+}
+
 .polaroid{
     width:330px;
     background:rgb(245, 225, 225);
@@ -146,66 +165,96 @@ button{
 button.siguiente{
     width:320px;
     height:58px;
+
     display:flex;
     align-items:center;
+
     background:#b32756;
     border-radius:30px;
+
     overflow:hidden;
+
     box-shadow:
-        0 10px 25px rgba(231,60,208,.25);
-    transition:
-        transform .2s,
-        box-shadow .2s;
+        0 8px 18px rgba(0,0,0,.20),
+        0 18px 35px rgba(179,39,86,.35);
+
+    transition:transform .25s, box-shadow .25s;
+}
+
+button.siguiente:hover{
+    transform:translateY(-2px);
+    box-shadow:
+        0 12px 24px rgba(0,0,0,.25),
+        0 22px 45px rgba(179,39,86,.45);
 }
 
 button.siguiente:active{
     transform:scale(.97);
 }
 
-button.siguiente:hover{
-    box-shadow:
-        0 14px 35px rgba(231,60,208,.35);
-}
-
 button.siguiente .circulo{
     width:58px;
     height:58px;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     background:#880430;
     border-radius:50%;
     flex-shrink:0;
+
+    box-shadow:
+        inset 0 2px 6px rgba(255,255,255,.15),
+        0 4px 10px rgba(0,0,0,.30);
 }
 
-button.siguiente .icono.flecha{
+.icono-corazon{
     position:relative;
-    width:18px;
-    height:2px;
+    width:16px;
+    height:16px;
+
     background:#fff;
+    transform:rotate(-45deg);
+
+    transition:transform .25s;
 }
 
-button.siguiente .icono.flecha::after{
+.icono-corazon::before,
+.icono-corazon::after{
     content:"";
     position:absolute;
-    right:0;
-    top:-5px;
-    width:8px;
-    height:8px;
-    border-top:2px solid #fff;
-    border-right:2px solid #fff;
 
-    transform:rotate(45deg);
+    width:16px;
+    height:16px;
+
+    background:#fff;
+    border-radius:50%;
+}
+
+.icono-corazon::before{
+    top:-8px;
+    left:0;
+}
+
+.icono-corazon::after{
+    left:8px;
+    top:0;
+}
+
+button.siguiente:active .icono-corazon{
+    transform:rotate(-45deg) scale(1.2);
 }
 
 button.siguiente .button-text{
     flex:1;
     text-align:center;
+
     color:white;
+
     font-size:17px;
     font-weight:600;
     letter-spacing:.5px;
-    text-transform:none;
 }
 
 @keyframes shine{
